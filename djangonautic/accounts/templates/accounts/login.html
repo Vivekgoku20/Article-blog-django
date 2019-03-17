@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<h1>Log in</h1>
+<form class="site-form" action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    {% if nxt  %}
+    <input type="hidden" name="next" value="{{ nxt }}">
+    {% endif %}
+    <input type="submit" value="Login">    
+</form>
+{% endblock %}
