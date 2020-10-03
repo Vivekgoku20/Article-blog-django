@@ -27,3 +27,9 @@ def article_create(request):
     else:
         form=forms.CreateArticle()
     return render(request,'article/article_create.html',{'form':form})
+
+
+def article_creator_details(request,slug):
+    # return HttpResponse(slug)
+    article=Article.objects.get(slug=slug)
+    return render(request,'article/article_creator_details.html',{'article':article})
